@@ -1,7 +1,12 @@
 import pytest
 import requests
 from random import randrange
+from solveme_pytest.src.generators.player import Player
 
+
+@pytest.fixture()
+def get_player_generator():
+    return Player()
 
 @pytest.fixture
 def get_number():
