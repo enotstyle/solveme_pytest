@@ -25,8 +25,15 @@ def test_something2(delete_key, get_player_generator):
     del object_to_send[delete_key]
     print(object_to_send)
 
-def test_something3(get_player_generator):
-    object_to_send = get_player_generator.update_inner_generator(
-        'localize', PlayerLocalization('fr_FR').set_number(14)
+
+@pytest.mark.parametrize('localizations', [
+    "fr",
+    "de",
+    "ch",
+    'ab'
+])
+def test_something3(get_player_generator, localizations):
+    object_to_send = get_player_generator.update_inner_value(
+        ['localize', localizations], PlayerLocalization('fr_FR').set_number(14).build()
     ).build()
     print(object_to_send)
