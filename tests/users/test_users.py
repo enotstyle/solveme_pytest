@@ -5,6 +5,8 @@ from solveme_pytest.configuration import SERVICE_URL
 from solveme_pytest.src.baseclasses.response import Response
 from solveme_pytest.src.schemas.user import User
 
+from solveme_pytest.src.schemas.computer import Computer
+from solveme_pytest.examples import computer
 
 def test_getting_users_list(get_users, make_number):
     Response(get_users).asser_status_code(200).validate(User)
@@ -38,3 +40,7 @@ def test_another_failing_t():
     In that test we try to check that 1 is equal to 2
     """
     assert 1 == 2
+
+def test_pydantic_object():
+    comp = Computer.parse_obj(computer)
+    print(comp.detailed_info.physical.color)

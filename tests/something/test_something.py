@@ -3,13 +3,9 @@ import pytest
 from solveme_pytest.src.generators.player import Player
 
 from solveme_pytest.src.generators.player_localization import PlayerLocalization
+from solveme_pytest.src.enums.user_enums import Statuses
 
-@pytest.mark.parametrize('status', [
-    'ACTIVE',
-    'BANNED',
-    'DELETED',
-    'INACTIVE'
-])
+@pytest.mark.parametrize('status', Statuses.list())
 def test_something1(status, get_player_generator):
     print(get_player_generator.set_status(status).build())
 

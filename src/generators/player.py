@@ -9,7 +9,7 @@ class Player(BuilderBaseClass):
         super().__init__()
         self.reset()
 
-    def set_status(self, status=Statuses.active.value):
+    def set_status(self, status=Statuses.ACTIVE.value):
         self.result['account_status'] = status
         return self
 
@@ -30,5 +30,4 @@ class Player(BuilderBaseClass):
         }
         return self
 
-    def build(self):
-        return self.result
+

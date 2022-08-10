@@ -6,6 +6,7 @@ class User(BaseModel):
     id: int
     name: int
     email: str
+    password: str
     gender: Genders
     status: Statuses
 
@@ -14,4 +15,5 @@ class User(BaseModel):
         if '@' in email:
             return email
         else:
-            raise ValueError(UserErrors.value)
+            raise ValueError(UserErrors.WRONG_EMAIL.value)
+
