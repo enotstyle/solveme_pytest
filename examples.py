@@ -1,3 +1,29 @@
+from db import session
+
+import tables
+
+result = session.query(
+    tables.Flights.flight_id, tables.Flights.status
+).filter(
+    tables.Flights.flight_id > 10,
+    tables.Flights.flight_id < 20
+).all()
+
+if result:
+    print('all good')
+else:
+    print('not good')
+
+print(result)
+
+flight_ids = session.query(
+    tables.Flights.flight_id
+).filter(tables.Flights.flight_id < 30).subquery()
+
+print(flight_ids)
+
+some_result = session.query(tables.Flights.)
+
 player = {
     "account_status": "ACTIVE",
     "balance": 10,
