@@ -4,7 +4,7 @@ from sqlalchemy import create_engine
 
 from sqlalchemy.ext.declarative import declarative_base
 
-from configuration import CONNECTION_ROW
+from solveme_pytest.configuration import CONNECTION_ROW
 
 
 Model = declarative_base(name='Model')
@@ -21,4 +21,4 @@ Session = sessionmaker(
     autocommit=False
 )
 
-session = Session()
+# session = Session()

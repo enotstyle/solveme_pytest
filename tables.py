@@ -1,6 +1,6 @@
 from sqlalchemy import Boolean, Column, Integer, String, DateTime
 
-from db import Model
+from solveme_pytest.db import Model
 
 
 class Flights(Model):
@@ -17,3 +17,12 @@ class Flights(Model):
     aircraft_code = Column(String)
     actual_departure = Column(DateTime(timezone=True))
     actual_arrival = Column(DateTime(timezone=True))
+
+
+class Seats(Model):
+
+    __tablename__ = 'seats'
+
+    aircraft_code = Column(String, primary_key=True)
+    seat_no = Column(String, primary_key=True)
+    fare_conditions = Column(String)

@@ -1,4 +1,4 @@
-from db import session
+from solveme_pytest.db import session
 
 import tables
 
@@ -21,8 +21,6 @@ flight_ids = session.query(
 ).filter(tables.Flights.flight_id < 30).subquery()
 
 print(flight_ids)
-
-some_result = session.query(tables.Flights.)
 
 player = {
     "account_status": "ACTIVE",
