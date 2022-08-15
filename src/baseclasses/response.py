@@ -1,5 +1,5 @@
 from jsonschema import validate
-from ..enums.global_enums import GlobalErrorMessages
+from solveme_pytest.src.enums.global_enums import GlobalErrorMessages
 
 
 class Response:

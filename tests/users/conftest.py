@@ -1,6 +1,6 @@
 import pytest
 import requests
-from ...configuration import SERVICE_URL
+from solveme_pytest.configuration import SERVICE_URL
 
 @pytest.fixture()
 def get_users():
