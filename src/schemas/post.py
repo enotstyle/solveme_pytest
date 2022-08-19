@@ -1,3 +1,8 @@
+"""
+Пример схемы jsonschema.
+"""
+
+
 POST_SCHEMA = {
     'type': 'object',
     'properties': {

@@ -1,7 +1,9 @@
 from solveme_pytest.src.enums.user_enums import Statuses
+
 from solveme_pytest.src.generators.player_localization import PlayerLocalization
 from solveme_pytest.src.baseclasses.builder import BuilderBaseClass
 
+"""Генератор Player"""
 
 class Player(BuilderBaseClass):
 

@@ -1,11 +1,14 @@
-from pydantic import BaseModel, HttpUrl, UUID4, EmailStr
-from solveme_pytest.src.enums.user_enums import Statuses
+from pydantic import BaseModel, EmailStr
 from pydantic.types import PastDate, FutureDate, List, PaymentCardNumber
 from pydantic.networks import IPv4Network, IPv6Network
-from pydantic.color import Color
+
 from solveme_pytest.src.schemas.physical import Physical
 
-from solveme_pytest.examples import computer
+from solveme_pytest.src.enums.user_enums import Statuses
+
+"""
+Пример со схемой Computer с вложениями.
+"""
 
 
 class Owners(BaseModel):
@@ -28,6 +31,3 @@ class Computer(BaseModel):
     host_v6: IPv6Network
     detailed_info: DetailedInfo
 
-
-comp = Computer.parse_obj(computer)
-print(comp)

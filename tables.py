@@ -1,11 +1,20 @@
-from sqlalchemy import Boolean, Column, Integer, String, DateTime
+from sqlalchemy import Column, Integer, String, DateTime
 
 from solveme_pytest.db import Model
 
 
 class Flights(Model):
 
+    """
+    Класс описывающий таблицы в базе данных demo.
+    """
+
     __tablename__ = 'flights'
+
+    """
+    __tablename__
+    Значение должно точно соответствовать названию таблицы в базе данных.
+    """
 
     flight_id = Column(Integer, primary_key=True)
     flight_no = Column(String)

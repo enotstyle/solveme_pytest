@@ -1,40 +1,26 @@
-# from solveme_pytest.db import session
-#
-# import tables
-#
-# result = session.query(
-#     tables.Flights.flight_id, tables.Flights.status
-# ).filter(
-#     tables.Flights.flight_id > 10,
-#     tables.Flights.flight_id < 20
-# ).all()
-#
-# if result:
-#     print('all good')
-# else:
-#     print('not good')
-#
-# print(result)
-#
-# flight_ids = session.query(
-#     tables.Flights.flight_id
-# ).filter(tables.Flights.flight_id < 30).subquery()
-#
-# print(flight_ids)
+human = {
+    "name": "Andrii",
+    "last_name": "Shevchenko",
+    "is_hide": True
+}
 
 player = {
     "account_status": "ACTIVE",
     "balance": 10,
     "localize": {
-            "en": {"nickname": "SolweMe"},
-            "ru": {"nickname": "СолвеМи"}
+        "en": {"nickname": "SolweMe"},
+        "ru": {"nickname": "СолвеМи"}
     },
     "avatar": "https://google.com/images/cars/420/420"
 }
 
+"""
+Пример объекта для тренировки использования pydemic схем 
+"""
+
 computer = {
     "id": 21,
-    "status": "ACTIVE",
+    "status": "active",
     "activated_at": "2013-06-01",
     "expiration_at": "2040-06-01",
     "host_v4": "91.192.222.17",
